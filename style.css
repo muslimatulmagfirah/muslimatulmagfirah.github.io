@@ -1,0 +1,78 @@
+/* style.css = tampilan (warna, ukuran, tata letak). Warna utama ada di :root, ubah di sini kalau mau ganti tema. */
+:root{--primary:#3b2418;--accent:#8a5a3c;--pop:#d99a4e;--ink:#2a1d16;--muted:#6a5547;--light:#ecdcc6;--line:#d9c4aa;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 "Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--white)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25;color:var(--primary);margin:0 0 .5em}
+h1{font-size:clamp(2.2rem,6vw,3.6rem)}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem)}
+h3{font-size:1.2rem}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+section.alt{background:var(--light)}
+.lead{color:var(--muted);max-width:62ch}
+
+/* Navbar */
+header.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:Georgia,serif;font-weight:700;color:var(--primary);text-decoration:none}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--ink);text-decoration:none;font-size:.95rem}
+.nav ul a:hover{color:var(--accent)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;font:inherit;color:var(--primary);cursor:pointer}
+
+/* Hero */
+.hero{background:var(--primary);border-bottom:4px solid var(--pop);padding:96px 0 84px}
+.hero h1{color:#fff7ee;margin-bottom:.25em}
+.hero .role{color:#e6c391;font-size:1.15rem;font-weight:600;margin:0 0 18px}
+.hero p.lead{color:#eadbc8;font-size:1.1rem}
+.hero .btn.ghost{color:#fff7ee;border-color:#c9a27e}
+.hero .btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:11px 22px;border-radius:8px;border:2px solid var(--pop);background:var(--pop);color:var(--primary);text-decoration:none;font-weight:700;font-size:.97rem;transition:background .2s}
+.btn:hover{background:#c4863a;border-color:#c4863a}
+.btn.ghost{background:transparent;border-color:var(--primary);color:var(--primary)}
+.btn.ghost:hover{background:rgba(59,36,24,.08)}
+.btn.disabled{background:transparent;border:2px dashed var(--line);color:var(--muted);cursor:not-allowed;pointer-events:none}
+
+/* Kartu & grid */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px}
+.alt .card{background:var(--white)}
+.card h3{font-size:1.05rem;font-family:"Segoe UI",Roboto,sans-serif}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.tags li{background:var(--light);border:1px solid var(--line);border-radius:999px;padding:4px 13px;font-size:.9rem}
+.alt .tags li{background:var(--white)}
+
+/* Proyek */
+.project{display:grid;gap:28px;grid-template-columns:1fr 1fr;align-items:start;margin-bottom:28px}
+.shots{display:grid;gap:10px}
+.shots img,.ph{width:100%;border-radius:8px;border:1px solid var(--line);aspect-ratio:16/9;object-fit:cover;background:var(--light)}
+.ph{display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;color:var(--muted);font-size:.88rem;border-style:dashed}
+.note{background:var(--light);border-left:4px solid var(--accent);padding:10px 14px;border-radius:0 8px 8px 0;font-size:.93rem;color:var(--muted)}
+.project ul{padding-left:20px;margin:.5em 0 1em}
+.meta{color:var(--muted);font-size:.92rem;margin:0 0 .8em}
+
+/* Timeline pengalaman */
+.timeline{border-left:3px solid var(--line);margin-left:6px;padding-left:26px}
+.item{position:relative;margin-bottom:34px}
+.item::before{content:"";position:absolute;left:-35px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--accent);border:3px solid var(--white)}
+.item h3{margin-bottom:.1em}
+.item ul{padding-left:20px;margin:.6em 0 0}
+
+/* Footer & tombol atas */
+footer{background:var(--primary);color:#e6d5c0;text-align:center;padding:28px 0;font-size:.92rem}
+#top-btn{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;border:none;background:var(--primary);color:#fff;font-size:1.2rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s}
+#top-btn.show{opacity:1;pointer-events:auto}
+
+@media(max-width:760px){
+ .project{grid-template-columns:1fr}
+ .menu-btn{display:block}
+ .nav ul{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;gap:0;background:var(--white);border-bottom:1px solid var(--line)}
+ .nav ul.open{display:flex}
+ .nav ul a{display:block;padding:14px 20px}
+ section{padding:52px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
