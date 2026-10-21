@@ -76,3 +76,29 @@ footer{background:var(--primary);color:#e6d5c0;text-align:center;padding:28px 0;
  section{padding:52px 0}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Membuat gambar Proyek 1 dan Proyek 2 berjejer ke samping (2 kolom) */
+.galeri-proyek {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Memastikan ukuran gambar pas, responsif, dan rapi */
+.galeri-proyek img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+/* Opsional: Mengatur tampilan pada layar HP agar otomatis kembali jadi 1 kolom biar tidak kekecilan */
+@media (max-width: 600px) {
+    .galeri-proyek {
+        grid-template-columns: 1fr;
+    }
+}
+
