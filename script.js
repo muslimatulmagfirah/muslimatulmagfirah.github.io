@@ -1,6 +1,4 @@
-// script.js = perilaku halaman (menu HP, tombol ke atas, penanganan link/gambar yang belum diisi).
 
-// 1. Menu di HP
 var menuBtn = document.getElementById('menu-btn');
 var menu = document.getElementById('menu');
 menuBtn.addEventListener('click', function () {
@@ -9,14 +7,13 @@ menuBtn.addEventListener('click', function () {
 });
 menu.addEventListener('click', function () { menu.classList.remove('open'); });
 
-// 2. Tombol kembali ke atas
+
 var topBtn = document.getElementById('top-btn');
 window.addEventListener('scroll', function () {
   topBtn.classList.toggle('show', window.scrollY > 500);
 });
 topBtn.addEventListener('click', function () { window.scrollTo({ top: 0 }); });
 
-// 3. Link yang masih berisi "GANTI_" dinonaktifkan supaya tidak mengarah ke tempat salah
 document.querySelectorAll('a[data-needs-link]').forEach(function (a) {
   if (a.getAttribute('href').indexOf('GANTI_') !== -1) {
     a.removeAttribute('href');
@@ -27,7 +24,6 @@ document.querySelectorAll('a[data-needs-link]').forEach(function (a) {
   }
 });
 
-// 4. Gambar yang belum ada diganti kotak petunjuk (bukan gambar palsu)
 function showPlaceholder(img) {
   var box = document.createElement('div');
   box.className = 'ph';
@@ -39,5 +35,4 @@ document.querySelectorAll('.shots img').forEach(function (img) {
   else { img.addEventListener('error', function () { showPlaceholder(img); }); }
 });
 
-// 5. Tahun di footer
 document.getElementById('year').textContent = new Date().getFullYear();
