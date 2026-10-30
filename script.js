@@ -1,4 +1,3 @@
-
 var menuBtn = document.getElementById('menu-btn');
 var menu = document.getElementById('menu');
 menuBtn.addEventListener('click', function () {
