@@ -264,6 +264,16 @@ header{justify-content:flex-end}
    <div class="sec"><b>Result</b> Menghasilkan WebGIS interaktif yang membantu mahasiswa memilih kos melalui pemeringkatan berbasis kriteria, visualisasi lokasi, dan pencarian rute terdekat.</div>
   </div><div class="gal" data-f="webgis" data-n="4" data-alt="Tampilan aplikasi WebGIS"></div></div>
  </article>
+  <article class="card">
+  <div class="top"><h3>Funnel Analysis Toko Online</h3><span class="tag">Data Analysis Practice</span></div>
+  <div class="two"><div>
+   <div class="sec"><b>Problem</b> Mengetahui pada tahap mana pengguna toko online paling banyak berhenti sebelum melakukan pembayaran.</div>
+   <div class="sec"><b>My Role</b> Menyusun dan menganalisis data simulasi sebagai latihan setelah mengikuti mini course Intro to Data Analytics di RevoU.</div>
+   <div class="sec"><b>What I Did</b> Menghitung jumlah pengguna di tiap tahap (kunjungi website sampai bayar) dari data mentah 100 pengguna, menghitung conversion dan drop-off, membandingkan pengguna Mobile dan Desktop, lalu menyajikannya dalam grafik funnel.</div>
+   <div class="sec"><b>Tech Stack</b> Microsoft Excel (COUNTIF, COUNTIFS). Metode: Funnel Analysis.</div>
+   <div class="sec"><b>Result</b> Menghasilkan analisis funnel yang menunjukkan conversion total 9% dengan titik berhenti terbesar pada tahap Tambah ke Keranjang, serta perbedaan conversion antara pengguna Mobile dan Desktop. Data bersifat simulasi.</div>
+  </div><div class="gal" data-f="funnel" data-n="4" data-alt="Sertifikat dan latihan funnel analysis"></div></div>
+ </article>
  <article class="card">
   <div class="top"><h3>Sistem Pakar Diagnosis Penyakit Akibat Merokok</h3><span class="tag">Freelance Project</span></div>
   <div class="two"><div>
@@ -366,7 +376,7 @@ let cur=0;
 const AC={welcome:"#e8b84a",beranda:"#d9673f",skills:"#e8b84a",project:"#b8855a",pengalaman:"#d9673f",pendidikan:"#e8b84a",publikasi:"#b8855a",kontak:"#d9673f"};
 order.forEach(id=>{const p=$("#"+id);p.style.setProperty("--ac",AC[id]);p.dataset.w=labels[id]||""});
 all(".in:not(.hero)").forEach(p=>[...p.children].forEach((e,k)=>e.style.setProperty("--k",k)));
-const FN={"#project .card":["webgis.py","sistem_pakar.py","mario_game"],"#pengalaman .card":["magang.log","pmm.log","relawan.log","kkn.log"],"#pendidikan .card":["s1.md","sma.md"],"#publikasi .card":["artikel.pdf"]};
+const FN={"#project .card":["webgis.py","funnel_analysis.xlsx","sistem_pakar.py","mario_game"],"#pengalaman .card":["magang.log","pmm.log","relawan.log","kkn.log"],"#pendidikan .card":["s1.md","sma.md"],"#publikasi .card":["artikel.pdf"]};
 Object.entries(FN).forEach(([q,a])=>all(q).forEach((c,k)=>c.dataset.f=a[k]||""));$("#skillbox").dataset.f="skills.json";
 all("#pengalaman .card").forEach((c,k)=>{const t=TANGGAL[k];if(t){const e=document.createElement("span");e.className="dt";e.textContent=t;c.appendChild(e)}});
 
